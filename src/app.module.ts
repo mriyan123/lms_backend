@@ -5,7 +5,6 @@ import { typeOrmConfigAsync } from './config/typeorm.config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TestModule } from './test/test.module';
 
 @Module({
   imports: [
@@ -14,7 +13,6 @@ import { TestModule } from './test/test.module';
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
     TypeOrmModule.forRootAsync(typeOrmConfigAsync),
-    TestModule,
   ],
   controllers: [AppController],
   providers: [AppService],
